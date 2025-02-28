@@ -29,7 +29,6 @@ src/
 This application is built using:
 
 - React with functional components and hooks
-- Tailwind CSS for styling
 - Modern JavaScript (ES6+)
 
 ## Usage
