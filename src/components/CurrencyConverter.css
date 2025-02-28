@@ -1,0 +1,312 @@
+/* CSS Variables for consistent theming */
+:root {
+  --primary-color: #3f51b5;
+  --primary-light: #e8eaf6;
+  --primary-dark: #303f9f;
+  --accent-color: #ff4081;
+  --text-color: #333333;
+  --text-light: #757575;
+  --background-color: #f5f5f5;
+  --card-color: #ffffff;
+  --border-color: #e0e0e0;
+  --border-radius: 8px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --transition-speed: 0.3s;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* Remove input number arrows */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Container for the entire converter app */
+.converter-container {
+  min-height: 100vh;
+  padding: var(--spacing-lg);
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Main card containing the converter */
+.converter-card {
+  background-color: var(--card-color);
+  width: 100%;
+  max-width: 600px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: var(--spacing-lg);
+}
+
+/* Title styles */
+.converter-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: var(--spacing-lg);
+  color: var(--primary-dark);
+}
+
+/* Section within the card */
+.card-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Section title */
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-color);
+}
+
+/* Exchange rate display */
+.rate-display {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-light);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  justify-content: space-between;
+}
+
+.rate-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.manual-badge {
+  font-size: 0.75rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-left: var(--spacing-sm);
+}
+
+/* Warning message */
+.warning-message {
+  display: flex;
+  align-items: center;
+  background-color: #fff3e0;
+  color: #e65100;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+}
+
+.warning-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: var(--spacing-sm);
+  stroke: #e65100;
+}
+
+/* Input group with button */
+.input-group {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+/* Form controls */
+.text-input {
+  flex: 1;
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color var(--transition-speed);
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+}
+
+.text-input.readonly {
+  background-color: #f9f9f9;
+  cursor: not-allowed;
+}
+
+/* Buttons */
+.primary-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.primary-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.reset-button {
+  background: none;
+  border: none;
+  color: #f44336;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: var(--spacing-sm) 0;
+  margin-top: var(--spacing-sm);
+}
+
+.reset-button:hover {
+  text-decoration: underline;
+}
+
+/* Toggle container */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
+}
+
+.toggle-label {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 4px;
+}
+
+.toggle-label.active {
+  background-color: white;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.toggle-button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Conversion form */
+.conversion-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .conversion-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.input-with-currency {
+  position: relative;
+}
+
+.currency-indicator {
+  position: absolute;
+  right: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  pointer-events: none;
+}
+
+/* History table */
+.history-table-container {
+  overflow-x: auto;
+  margin-top: var(--spacing-sm);
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.history-table th,
+.history-table td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.history-table th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  color: var(--text-light);
+  font-size: 0.75rem;
+}
+
+.empty-history {
+  text-align: center;
+  color: var(--text-light);
+  padding: var(--spacing-md);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .converter-card {
+    padding: var(--spacing-md);
+  }
+  
+  .converter-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.125rem;
+  }
+  
+  .rate-value {
+    font-size: 1.125rem;
+  }
+  
+  .history-table th,
+  .history-table td {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.75rem;
+  }
+}
