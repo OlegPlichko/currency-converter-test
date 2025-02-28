@@ -10,6 +10,20 @@ A React-based currency converter application that allows users to convert betwee
 - Conversion history tracking (last 5 conversions)
 - Responsive design with clean UI/UX
 
+## Project Structure
+
+```
+src/
+├── components/
+|   └── __tests__
+|   |   └── CurrencyConverter.test.tsx
+│   └── CurrencyConverter.tsx
+|   └── CurrencyConverter.css
+|── App.css
+├── App.tsx
+└── index.tsx
+```
+
 ## Technical Implementation
 
 This application is built using:
@@ -42,6 +56,11 @@ This application is built using:
 3. Start the development server:
    ```bash
    npm start
+   ```
+
+4. Run unit tests
+   ```bash
+   npm test
    ```
 
 ## Deployment
